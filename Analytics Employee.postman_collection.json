@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "c39fd9d0-fb5b-4e08-b7fa-22468404c2c0",
+		"name": "Analytics Employee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37719772"
+	},
+	"item": [
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Sankareshwaran/Downloads/tasks_data - tasks_data.csv.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}employee/",
+					"host": [
+						"{{base_url}}employee"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compute total hours spent per department",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}employee/department-contribute-hour/?chart=true",
+					"host": [
+						"{{base_url}}employee"
+					],
+					"path": [
+						"department-contribute-hour",
+						""
+					],
+					"query": [
+						{
+							"key": "chart",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Identify the top 3 employees with the highest workload",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}employee/workload-employee/?chart=true",
+					"host": [
+						"{{base_url}}employee"
+					],
+					"path": [
+						"workload-employee",
+						""
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "chart",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate task completion percentage per department",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}employee/employee-task-completion?chart=true",
+					"host": [
+						"{{base_url}}employee"
+					],
+					"path": [
+						"employee-task-completion"
+					],
+					"query": [
+						{
+							"key": "chart",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find tasks that are delayed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}employee/delay-task?chart=true",
+					"host": [
+						"{{base_url}}employee"
+					],
+					"path": [
+						"delay-task"
+					],
+					"query": [
+						{
+							"key": "chart",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate average hours per completed task.",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Sankareshwaran/Downloads/employee_tasks.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}employee/task-complete-hour/",
+					"host": [
+						"{{base_url}}employee"
+					],
+					"path": [
+						"task-complete-hour",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}employee",
+					"host": [
+						"{{base_url}}employee"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
